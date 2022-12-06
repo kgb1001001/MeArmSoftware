@@ -29,7 +29,7 @@ You can move the individual servos (or return to home position) by sending REST 
 - http://your.ip.address.here/baseRotate?param=INT
 - http://your.ip.address.here/xExtend?param=INT
 - http://your.ip.address.here/yExtend?param=INT
-- http://your.ip.address.here/home
+- http://your.ip.address.here/homePosition
 
 **Tweaking the operation**
 
