@@ -1,6 +1,8 @@
 # MeArmSoftware
 Arduino software for the MeArm robot arm (using an Arduino Wifi Shield and AdaFruit PWM Servo Board)
 
+![Mearm build with Arduino Shields](./images/MeArmBuildwithArduinoShields.jpg)
+
 One of the frustrations of using the open source [MeArm robot arm](https://www.thingiverse.com/thing:360108) is the lack of support of software for Arduino -- the community as a whole seems to have gravitated toward Raspberry Pi as the default choice for controlling the MeArm -- however for the last several months Raspberry Pis have been as scarce as hens teeth (there are literally sniping bots donated by the community that grab them off of sites like Amazon and Adafruit as soon as they appear in the online catalogs as available).  Meanwhile, Arduinos are readily available, but the Arduino community itself has fractured and spread, with the result being that there are literally dozens of boards, form factors and combinations of these.
 
 I have been trying for several weeks to put together a simple REST-based server for the boards that I had available - a standard [Arduino Uno Rev3](https://store-usa.arduino.cc/products/arduino-uno-rev3), an [Arduino Wifi Shield](https://www.sparkfun.com/products/retired/11287) and the [Adafruit PWM Servo shield](https://www.adafruit.com/product/1411?gclid=Cj0KCQiA7bucBhCeARIsAIOwr--_LZ_OsnZebVt89jlr0gecEERaLyTYsC1oAsb4bOj-4omWjSup22YaAlG3EALw_wcB)
