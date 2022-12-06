@@ -18,7 +18,7 @@ Both of these will need to be installed in your Arduino IDE through the library 
 
 **Using the software**
 
-Simply open the .ino file in the Arduino IDE (either the web version or the isntallable version), edit the file to include your Wifi SSID and password, select the right board type (Arduino Uno) and port and upload the file.  You probably want to initially start using the USB cable from your computer to power the Arduino so that you can also use the Serial Monitor to read the IP address that the Arduino Wifi Shield comes up on.  This will be reported by the `printWifiStatus()` function that runs at `setup()` time (both when the board is powered up and whenever you press the reset button]).
+Simply open the .ino file in the Arduino IDE (either the web version or the isntallable version), edit the file to include your Wifi SSID and password, select the right board type (Arduino Uno) and port and upload the file.  You probably want to initially start using the USB cable from your computer to power the Arduino so that you can also use the Serial Monitor to read the IP address that the Arduino Wifi Shield comes up on.  This will be reported by the `printWifiStatus()` function that runs at `setup()` time (both when the board is powered up and whenever you press the reset button).
 
 Once you know the IP address you can simply type that IP address into a browser connected to the same wifi network to read off the current positions of the base, gripper, and x and y servos (returned as a JSON response).
 
