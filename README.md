@@ -7,7 +7,7 @@ One of the frustrations of using the open source [MeArm robot arm](https://www.t
 
 I have been trying for several weeks to put together a simple REST-based server for the boards that I had either on hand or available - a standard [Arduino Uno Rev3](https://store-usa.arduino.cc/products/arduino-uno-rev3), an [Arduino Wifi Shield](https://www.sparkfun.com/products/retired/11287) and the [Adafruit PWM Servo shield](https://www.adafruit.com/product/1411?gclid=Cj0KCQiA7bucBhCeARIsAIOwr--_LZ_OsnZebVt89jlr0gecEERaLyTYsC1oAsb4bOj-4omWjSup22YaAlG3EALw_wcB)
 
-I finally managed to pull it all together - along the way also trying other combinations that I will eventually post into this repository, including replacing the Arduino Uno and Wifi Shield with the currently supported [Arduino Uno Wifi Rev 2](https://store.arduino.cc/products/arduino-uno-wifi-rev2) (which, of course, uses a different chipset, and thus an entirely different set of software libraries from the previous version).
+I finally managed to pull it all together - along the way also trying other combinations that I have also added to this repository, including replacing the Arduino Uno and Wifi Shield with the currently supported [Arduino Uno Wifi Rev 2](https://store.arduino.cc/products/arduino-uno-wifi-rev2) (which, of course, uses a different chipset, and thus an entirely different set of software libraries from the previous version).
 
 The project was built using libraries and resources from several sources.  The most notable include
 
