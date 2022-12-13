@@ -4,6 +4,12 @@ mearm robot arm from the Adafruit PWM shield
 You need to tweak the minimum and maximum distances
 for each servo (base, gripper, x and y) to match your
 particular build.
+
+Note:  This particular combination does not support the
+homePosition REST command that the Arduino UNO Wifi Rev 2
+version will support - for some unknown reason the same code 
+causes the UNO to go into a reboot loop.
+
  ****************************************************/
 
 #include <Wire.h>
@@ -39,7 +45,7 @@ Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
 #define XSERVO 2
 #define YSERVO 3
 
-// our servo # counter
+// is servo initialization complete?
 int firsttime = 0;
 
 char ssid[] = ""; //  your network SSID (name)
@@ -64,7 +70,6 @@ int closeGripper(String command);
 int baseRotate(String command);
 int extendX(String command);
 int extendY(String command);
-//int home(StringCommand);
 
 void setup() {
   Serial.begin(9600);
@@ -72,6 +77,8 @@ void setup() {
   pwm.begin();
   pwm.setOscillatorFrequency(27000000);
   pwm.setPWMFreq(SERVO_FREQ);  // Analog servos run at ~50 Hz updates
+
+  delay(10);
 
   rest.variable("xAngle",&xAngle);
   rest.variable("yAngle",&yAngle);
@@ -83,7 +90,6 @@ void setup() {
   rest.function("baseRotate",baseRotate);
   rest.function("xExtend",xExtend);
   rest.function("yExtend",yExtend);
-  // rest.function("home",goHome);
 
   // Give name and ID to device (ID should be 6 characters long)
   rest.set_id("100100");
@@ -108,7 +114,7 @@ void setup() {
     status = WiFi.begin(ssid, pass);
 
     // Wait 2 seconds for connection
-    delay(2000);
+    delay(10000);
   }
 
   // Start the server
@@ -119,6 +125,8 @@ void setup() {
 }
 
 void driveServo(int servonum, int angle, int servomin, int servomax) {
+  if (angle < 0 || angle > 180)
+    return;
   int pulselen = 0;
   Serial.print("driving servo ");
   Serial.print(servonum);
@@ -220,13 +228,6 @@ int extendY(String command) {
   // Get state from command
   int state = command.toInt();
   yExtend(state);
-  return 1;
-}
-
-int home(String command) {
-  // Get state from command
-  int ignored = command.toInt();
-  goHome();
   return 1;
 }
 
